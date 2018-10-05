@@ -1,0 +1,14 @@
+e2e:
+  playerHomeUrl: http://localhost:4200/
+  portalManagerHomeUrl: https://portal.${e2e.environment}.intra-apps.com/
+  rewardManagerHomeUrl: https://rewardmanager.${e2e.environment}.intra-apps.com/
+  customerManagerHomeUrl: https://customermanager.${e2e.environment}.intra-apps.com/
+  bulkChangeManagerHomeUrl: https://bulkchangemanager.${e2e.environment}.intra-apps.com/
+  payoutServiceUrl: https://ecomm-payouts-service.${e2e.environment}.intra-apps.com/
+  ecommAPIUrl: http://ecomm-api.${e2e.environment}.internal/
+  ecomm:
+    routing:
+      user: admin
+      password: SabroSo69
+      url: http://localhost:4200
+      authUrl: http://%s:%s@localhost:4200

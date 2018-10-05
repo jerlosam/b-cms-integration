@@ -1,0 +1,45 @@
+e2e:
+  playerHomeUrl: https://www.${e2e.brandDomain}/
+  portalManagerHomeUrl: https://portal.intra-apps.com/
+  rewardManagerHomeUrl: https://rewardmanager.intra-apps.com/
+  customerManagerHomeUrl: https://customermanager.intra-apps.com/
+  bulkChangeManagerHomeUrl: https://bulkchangemanager.intra-apps.com/
+  servicesUrl: https://services.${e2e.brandDomain}/services
+  environment: b2pb
+  player: beatrix@crazy88.io
+  secondPlayer: beatrix2@crazy88.io
+  paymentId: ${e2e.paymentData.${e2e.brandCode}}
+  paymentData:
+    SLCOM: 417276216
+    CRAZY88: 409081197
+    SLLV: 417276449
+  ecomm:
+    b2pb:
+      user: qa-ecomm-b2pa
+      password: LVbCoE77oXKKD6n
+    customerManagerUrl: https://%s:%s@customermanager.intra-apps.com/ecomm/proxy-api/payments/willfail/details
+    routing:
+      url: https://ecomm-routing-services.b2pa.intra-apps.com/admin-ui
+      authUrl: https://ecomm-auth-service.b2pa.intra-apps.com/login
+    payoutservice:
+      url: https://ecomm-payouts-service.b2pa.intra-apps.com/
+    ecommapi:
+      url: http://ecomm-api.b2pa.internal/
+      user:
+      password:
+  bulk:
+    alice:
+      backoffice:
+        environment: ${e2e.bulk.alice.backoffice.${e2e.environment}.aliceEnv}
+        b2pb:
+          aliceEnv: b2pa
+          user: qa-bo-test
+          password: Password345
+          profileId: 0
+        profileId: ${e2e.bulk.alice.backoffice.${e2e.environment}.profileId}
+        urlBase: https://backoffice.${e2e.bulk.alice.backoffice.environment}.intra-apps.com
+        urlLogin: https://${e2e.bulk.alice.backoffice.${e2e.environment}.user}:${e2e.bulk.alice.backoffice.${e2e.environment}.password}@backoffice.${e2e.bulk.alice.backoffice.environment}.intra-apps.com/manager/fullwidth/profilehome
+        urlHome: ${e2e.bulk.alice.backoffice.urlBase}/manager/fullwidth/profilehome
+feign:
+  login:
+    url: https://services.${e2e.brandDomain}/

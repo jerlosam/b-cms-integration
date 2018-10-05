@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: beatrix-e2e

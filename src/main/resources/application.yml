@@ -1,0 +1,183 @@
+e2e:
+  ignoredProducts: #available ecomm, casino
+  playerHomeUrl: https://www.${e2e.environment}.${e2e.brandDomain}/
+  portalHomeUrl: https://portal.${e2e.environment}.intra-apps.com/
+  playerReferAFriendUrl: https://www.${e2e.environment}.${e2e.brandDomain}/refer
+  playerContactUsUrl: https://www.${e2e.environment}.${e2e.brandDomain}/contact-us
+  referAFriendDisabled: [SLCOM]
+  referrerAliceAffiliate: 1020
+  rewardManagerHomeUrl: https://rewardmanager.${e2e.environment}.intra-apps.com/
+  customerManagerHomeUrl: https://customermanager.${e2e.environment}.intra-apps.com/
+  bulkChangeManagerHomeUrl: https://bulkchangemanager.${e2e.environment}.intra-apps.com/
+  testingGateway: http://beatrix-testing-gateway-service.${e2e.environment}.internal/
+  servicesUrl: https://services.${e2e.environment}.${e2e.brandDomain}/services
+  environment: mdev
+  brandCode: CRAZY88
+  brandDomain: ${e2e.${e2e.brandCode}.brandDomain}
+  brandName: ${e2e.${e2e.brandCode}.brandName}
+  brandTemplate: ${e2e.${e2e.brandCode}.brandTemplate}
+  SLLV:
+    brandDomain: slots.lv
+    brandName: Slots LV
+    brandTemplate: BLACKMAMBA
+  CRAZY88:
+    brandDomain: crazy88.io
+    brandName: Crazy 88
+    brandTemplate: BLACKMAMBA
+  SLCOM:
+    brandDomain: slots.com
+    brandName: Slots
+    brandTemplate: BLACKMAMBALITE
+  BDG88:
+    brandDomain: bodog88.com
+    brandName: Bodog88
+    brandTemplate: COPPERHEAD
+  regionName: North America
+  countryCode: US
+  qaLdapUser: beatrix-qaa
+  qaLdapPassword: yDLzvaQ3ZTTRfhf
+  qaLoyaltyLdapUser: beatrix-loyalty-qaa
+  qaLoyaltyLdapPassword: D8y71iqjG7Zq7
+  ecomm:
+    environment: ${e2e.ecomm.${e2e.environment}.ecommEnv}
+    mdev:
+      ecommEnv: ${e2e.environment}
+      user: qa-ecomm-mdev
+      password: MF|vj*4NVC
+    lint:
+      ecommEnv: ${e2e.environment}
+      user: qa-ecomm-lint
+      password: 78a638yCb23N
+    muat:
+      ecommEnv: ${e2e.environment}
+      user: qa-ecomm-muat
+      password: uktCc9ZzGv
+    ltb:
+      ecommEnv: lta
+      user: qa-ecomm-lta
+      password: 0yr8y61Rh7cLdBF
+    lta:
+      ecommEnv: lta
+      user: qa-ecomm-lta
+      password: 0yr8y61Rh7cLdBF
+    qaLdap:
+      user: ${e2e.ecomm.${e2e.environment}.user}
+      password: ${e2e.ecomm.${e2e.environment}.password}
+    customerManagerUrl: https://%s:%s@customermanager.${e2e.environment}.intra-apps.com/ecomm/proxy-api/payments/willfail/details
+    routing:
+      user: ${e2e.ecomm.${e2e.environment}.user}
+      password: ${e2e.ecomm.${e2e.environment}.password}
+      url: https://ecomm-routing-services.${e2e.ecomm.environment}.intra-apps.com/admin-ui
+      authUrl: https://ecomm-auth-service.${e2e.ecomm.environment}.intra-apps.com/login
+    payoutservice:
+      user: ${e2e.ecomm.${e2e.environment}.user}
+      password: ${e2e.ecomm.${e2e.environment}.password}
+      url: https://ecomm-payouts-service.${e2e.ecomm.environment}.intra-apps.com/
+    ecommapi:
+      url: http://ecomm-api.${e2e.environment}.internal/
+      user: ${e2e.ecomm.ecommapi.${e2e.environment}.user}
+      password: ${e2e.ecomm.ecommapi.${e2e.environment}.password}
+      mdev:
+        user: autoqa
+        password: 1autoqa!
+      lint:
+        user: autoqa
+        password: kgmz4fRtnYK
+      lta:
+        user: autoqa
+        password: Password296
+      ltb:
+        user: autoqa
+        password: 4pQJfRIXdwgb
+      muat:
+        user: autoqa
+        password: xL1jBDv1Z76G
+
+  bulk:
+    alice:
+      backoffice:
+        environment: ${e2e.bulk.alice.backoffice.${e2e.environment}.aliceEnv}
+        mdev:
+          aliceEnv: ${e2e.environment}
+          user: qa-bo-mdev
+          password: Password123
+          profileId: 941809916
+        lint:
+          aliceEnv: ${e2e.environment}
+          user: qa-bo-lint
+          password: Password234
+          profileId: 94982424
+        muat:
+          aliceEnv: ${e2e.environment}
+          user: qa-bo-muat
+          password: Password567
+          profileId: 94080118
+        ltb:
+          aliceEnv: lta
+          user: qa-bo-test
+          password: Password345
+          profileId: 94130217
+        lta:
+          aliceEnv: lta
+          user: qa-bo-test
+          password: Password345
+          profileId: 94130217
+        profileId: ${e2e.bulk.alice.backoffice.${e2e.environment}.profileId}
+        urlBase: https://backoffice.${e2e.bulk.alice.backoffice.environment}.intra-apps.com
+        urlLogin: https://${e2e.bulk.alice.backoffice.${e2e.environment}.user}:${e2e.bulk.alice.backoffice.${e2e.environment}.password}@backoffice.${e2e.bulk.alice.backoffice.environment}.intra-apps.com/manager/fullwidth/profilehome
+        urlHome: ${e2e.bulk.alice.backoffice.urlBase}/manager/fullwidth/profilehome
+feign:
+  signup:
+    url: https://www.${e2e.environment}.${e2e.brandDomain}/
+  rewardManagement:
+    url: https://rewardmanager.${e2e.environment}.intra-apps.com/
+  rewardIssuing:
+    url: https://www.${e2e.environment}.${e2e.brandDomain}/
+  rewardAvailability:
+    url: ${e2e.testingGateway}/reward-availability-service/
+  login:
+    url: https://www.${e2e.environment}.${e2e.brandDomain}/
+  walletConstraints:
+    url: https://rewardmanager.${e2e.environment}.intra-apps.com/
+  referenceData:
+    url: ${e2e.testingGateway}/reference-data-service/
+  brandProperties:
+    url: ${e2e.testingGateway}/brand-admin-service/
+  temporaryToken:
+    url: ${e2e.testingGateway}/temporary-token-service/
+  messages:
+    url: ${e2e.testingGateway}/messages-service/
+  profile:
+    url: ${e2e.testingGateway}/profile-service/
+  bulkChange:
+    url: ${e2e.testingGateway}/bulk-change-service/
+  cashier:
+    url: ${e2e.servicesUrl}/cashier/api/
+  profileSearch:
+    url: ${e2e.customerManagerHomeUrl}services/profile-search/
+  brandPropertiesCustomerManager:
+    url: ${e2e.customerManagerHomeUrl}services/brand-admin/
+  siteConfig:
+    url: ${e2e.servicesUrl}/site-config/
+  hystrix:
+    enabled: false
+  payoutService:
+    url: ${e2e.ecomm.payoutservice.url}api/public/
+  referral:
+    url: ${e2e.testingGateway}/referral-service/
+  ecommapi:
+    url: ${e2e.ecomm.ecommapi.url}public/api
+  loyaltyProgram:
+    url: ${e2e.testingGateway}/loyalty-program-service/
+  walletGateway:
+    url: ${e2e.testingGateway}/wallet-gateway-service/
+
+eureka:
+  client:
+    enabled: false
+
+spring:
+  sleuth:
+    enabled: false
+  profiles:
+    active: ${activeProfile}
